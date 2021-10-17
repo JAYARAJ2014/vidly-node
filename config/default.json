@@ -1,3 +1,4 @@
 {
-    "name":"Vidly"
+    "name":"Vidly",
+    "connectionString":"mongodb://localhost:27017/vidly"
 }
