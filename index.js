@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const home = require('./routes/home');
 const genres = require('./routes/genres');
+const customers = require('./routes/customers');
 const helmet = require('helmet');
 const morgan  = require('morgan');
 const config = require('config');
@@ -11,10 +12,11 @@ const app = express();
 app.set('view engine','pug');
 app.set('views','./views');
 
-app.use(express.json());
-app.use(helmet());
-app.use('/',home);
-app.use('/api/genres',genres);
+app.use(express.json())
+    .use(helmet())
+    .use('/',home)
+    .use('/api/genres',genres)
+    .use('/api/customers', customers);
 
 const port = process.env.PORT || 3000;
 
